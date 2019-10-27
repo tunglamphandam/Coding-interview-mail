@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n ;
+	cin >> n;
+	int Arr[n] ;
+	for (int i=0; i<n;i++)
+	{
+		cin >>Arr[i] ;
+	}
+	for (int i=0; i<n-1; i++)
+	{
+	    if (Arr[i] == Arr[i+1])
+	    	{
+	    		for(int j = i; j < n - 1; j++)
+				{
+                    Arr[j] = Arr[j+1];
+                }
+            --n;
+			}
+	}
+	int s = 0;
+	for (int i =0; i<n; i = i+2)
+	{
+		s = s + Arr[i];
+	}
+	cout << s <<endl;
+	return 0;
+}
